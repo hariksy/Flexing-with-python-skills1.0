@@ -1,6 +1,6 @@
 import random
 
-def get_comedic_message():
+def message_prompts():
     messages = [
         "Winter is coming... but your guess was not the one.", 
         "A Lannister always pays his debts, but your guess wasn't quite right.",
@@ -10,9 +10,11 @@ def get_comedic_message():
         "You must be as blind as Maester Aemon, for your guess was far from the mark.",
         "In the game of numbers, you win or you guess again.",
         "Dracarys! Your guess went up in flames.",
+        "Hold the door... to let your next guess through, because that one was wrong.",
         "You may be the King in the North, but you're not the Guesser of the Number.", 
         "The North remembers... that your guess was incorrect.", 
-        "When you play the number guessing game, you win or you die. Unfortunately, you didn't win this time.",
+        "When you play the number guessing game, you win or you die. Unfortunately, you didn't win this time.", 
+        "A mind needs books as a sword needs a whetstone. Looks like you need to sharpen your guessing skills.",
         "The things I do for love... do not include giving hints for your guess.",
         "I drink and I know things... but I don't know the number you guessed.", 
         "I am the sword in the darkness... but not the number in your guess.", 
@@ -20,23 +22,26 @@ def get_comedic_message():
     ]
     return random.choice(messages)
 
-def main():
-    print("Welcome to the Hilarious Number Guessing Game!")
+def g_o_g():
+    print("Welcome to Game of Guessing!")
     print("I've selected a number between 1 and 100. Try to guess it!")
-    print("Hint: It's not a negative number, but it might be positively challenging.")
+    print("In the Game of Guessing, either you win or you try again")
+    print("Click Enter to Begin the Game of Guessing")
+    print()
+
 
     secret_number = random.randint(1, 100)
     attempts = 0
 
     while True:
         try:
-            guess = int(input("\nEnter your guess: "))
+            guess = int(input("Enter your guess: "))
             attempts += 1
 
             if guess < secret_number:
-                print("Too low! " + get_comedic_message())
+                print("Too low! " + message_prompts())
             elif guess > secret_number:
-                print("Too high! " + get_comedic_message())
+                print("Too high! " + message_prompts())
             else:
                 print(f"\nCongratulations! You guessed it in {attempts} attempts!")
                 break
@@ -44,7 +49,6 @@ def main():
         except ValueError:
             print("Please enter a valid number.")
 
-    print("\nThanks for playing the Hilarious Number Guessing Game!")
-
-if __name__ == "__main__":
-    main()
+    print("\nThanks for playing the Game of Guessing!")
+if __name__ == "__g_o_g__":
+    g_o_g()
