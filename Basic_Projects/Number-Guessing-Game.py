@@ -26,7 +26,7 @@ def g_o_g():
     input()
 
     secret_number = random.randint(1, 100)
-    attempts = 5
+    attempts = 0
 
     while True:
         try:
@@ -49,3 +49,4 @@ def g_o_g():
 
 if __name__ == "__main__":
     g_o_g()
+input()
