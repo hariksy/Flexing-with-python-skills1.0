@@ -2,16 +2,21 @@ import random
 
 def get_comedic_message():
     messages = [
-        "Oh no, that's not it! Maybe try counting the number of fingers you have left.",
-        "Close, but no cigar. Unless you have a cigar, then you're still just close.",
-        "So close, yet so far. Like trying to touch your toes without bending your knees.",
-        "Nope, not this time. Keep going, you're making me laugh!",
-        "Not quite! If at first, you don't succeed, skydiving is not for you.",
-        "Nope, try again! Remember, it's just you against the infinite abyss of numbers.",
-        "Nope, not this time! If guessing were a sport, you'd be... well, you'd be playing this game.",
-        "Not quite! Keep going, you're getting warmer. Unless you're standing next to a penguin.",
-        "Nope, not yet! Keep guessing, and remember, even a broken clock is right twice a day.",
-        "Nope, that's not it! If guessing were an art, you'd be... well, you'd still be guessing."
+        "Winter is coming... but your guess was not the one.", 
+        "A Lannister always pays his debts, but your guess wasn't quite right.",
+        "You know nothing, Jon Snow... especially the number I'm thinking of.",
+        "The night is dark and full of errors... like your guess.",
+        "Valar Morghulis... but your guess was not the one to live.",
+        "You must be as blind as Maester Aemon, for your guess was far from the mark.",
+        "In the game of numbers, you win or you guess again.",
+        "Dracarys! Your guess went up in flames.",
+        "You may be the King in the North, but you're not the Guesser of the Number.", 
+        "The North remembers... that your guess was incorrect.", 
+        "When you play the number guessing game, you win or you die. Unfortunately, you didn't win this time.",
+        "The things I do for love... do not include giving hints for your guess.",
+        "I drink and I know things... but I don't know the number you guessed.", 
+        "I am the sword in the darkness... but not the number in your guess.", 
+        "The night's watch has ended for your guess."
     ]
     return random.choice(messages)
 
