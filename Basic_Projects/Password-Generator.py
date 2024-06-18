@@ -3,9 +3,8 @@ import string
 import pyperclip
 
 print("Welcome to the drowssaP rotareneG")
-print("\U0001F600")
 DEFAULT_LENGTH = 12
-
+print("\U0001F600")
 #Generate a random password
 def generate_password(length=DEFAULT_LENGTH, include_uppercase=False, include_numbers=False, include_special_chars=False):
     characters = string.ascii_lowercase
@@ -99,3 +98,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+input()
