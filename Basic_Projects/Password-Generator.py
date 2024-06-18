@@ -2,21 +2,24 @@ import random
 import string
 import pyperclip
 
-print("Hi, Welcome to drowssaP rotareneG ")
+print("Welcome to the drowssaP rotareneG")
+print("\U0001F600")
 DEFAULT_LENGTH = 12
 
-def generate_password(length=DEFAULT_LENGTH, use_uppercase=False, use_numbers=False, use_special_chars=False):
-    chars = string.ascii_lowercase
-    if use_uppercase:
-        chars += string.ascii_uppercase
-    if use_numbers:
-        chars += string.digits
-    if use_special_chars:
-        chars += string.punctuation
+#Generate a random password
+def generate_password(length=DEFAULT_LENGTH, include_uppercase=False, include_numbers=False, include_special_chars=False):
+    characters = string.ascii_lowercase
+    if include_uppercase:
+        characters += string.ascii_uppercase
+    if include_numbers:
+        characters += string.digits
+    if include_special_chars:
+        characters += string.punctuation
 
-    password = ''.join(random.choice(chars) for _ in range(length))
+    password = ''.join(random.choice(characters) for _ in range(length))
     return password
 
+#Generate a password based on a given pattern
 def generate_password_with_pattern(pattern):
     password = ''
     for char in pattern:
@@ -32,10 +35,12 @@ def generate_password_with_pattern(pattern):
             password += char
     return password
 
+#Generate a password based on personal information
 def generate_password_with_personal_info(name, birthdate):
     password = name[:3] + birthdate[-4:]
     return password
 
+#Export passwords to a file
 def export_passwords(passwords):
     with open('passwords.txt', 'w') as file:
         for password in passwords:
@@ -44,29 +49,28 @@ def export_passwords(passwords):
 
 def main():
     passwords = []
-    print("1. Generate a Password")
-    print("2. Generate a Password with Pattern")
-    print("3. Generate a Password with Personal Info")
+    print("Menu:")
+    print("1. Generate a Random Password")
+    print("2. Generate a Password Based on a Pattern")
+    print("3. Generate a Password Using Personal Information")
 
     while True:
         choice = int(input("Enter your choice: "))
     
         if choice == 1:
-            print("Vaathiyarey please lock option 1, Click enter to continue")
-            input()
+            print("Generating a Random Password...")
             length = input("Enter the length of the password (press Enter for default length): ")
             length = int(length) if length else DEFAULT_LENGTH
-            use_uppercase = input("Include uppercase letters? (y/n): ").lower() == 'y'
-            use_numbers = input("Include numbers? (y/n): ").lower() == 'y'
-            use_special_chars = input("Include special characters? (y/n): ").lower() == 'y'
-            password = generate_password(length, use_uppercase, use_numbers, use_special_chars)
+            include_uppercase = input("Include uppercase letters? (y/n): ").lower() == 'y'
+            include_numbers = input("Include numbers? (y/n): ").lower() == 'y'
+            include_special_chars = input("Include special characters? (y/n): ").lower() == 'y'
+            password = generate_password(length, include_uppercase, include_numbers, include_special_chars)
             passwords.append(password)
             print("Your password is:", password)
             pyperclip.copy(password)  # Copy the password to clipboard
             print("Password copied to clipboard.")
         elif choice == 2:
-            print("Vaathiyarey please lock option 2, Click enter to continue")
-            input()
+            print("Generating a Password Based on a Pattern...")
             pattern = input("Enter the password pattern (u for uppercase, l for lowercase, d for digit, s for special character, and any other character as is): ")
             password = generate_password_with_pattern(pattern)
             passwords.append(password)
@@ -74,8 +78,7 @@ def main():
             pyperclip.copy(password)  # Copy the password to clipboard
             print("Password copied to clipboard.")
         elif choice == 3:
-            print("Vaathiyarey please lock option 3, Click enter to continue")
-            input()
+            print("Generating a Password Using Personal Information...")
             name = input("Enter your name: ")
             birthdate = input("Enter your birthdate (MMDDYYYY): ")
             password = generate_password_with_personal_info(name, birthdate)
