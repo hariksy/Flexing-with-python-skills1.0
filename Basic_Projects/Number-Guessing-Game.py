@@ -23,7 +23,7 @@ def message_prompts():
 def guessing_game(level):
     ranges = {1: 50, 2: 100, 3: 100}  # Different ranges for levels
     max_attempts = {1: 10, 2: 7, 3: 5}  # Different max attempts for levels
-    hint_frequency = {1: 1, 2: 2, 3: 3}  # Hint frequency for levels (1: Every attempt, 2: Every 2 attempts, 3: Every 3 attempts)
+    hint_frequency = {1: 1, 2: 2, 3: 3}  # Hint frequency f10or levels (1: Every attempt, 2: Every 2 attempts, 3: Every 3 attempts)
 
     max_range = ranges.get(level, 50)
     secret_number = random.randint(1, max_range)
