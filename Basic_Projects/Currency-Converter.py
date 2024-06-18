@@ -2,10 +2,10 @@ import requests
 
 API_KEY = 'b826b425eed2c9c7e89bad27'
 
+# Function to fetch exchange rates from the API
 def get_exchange_rate(api_key, base_currency, target_currencies):
-    
+   
     url = f'https://v6.exchangerate-api.com/v6/{api_key}/latest/{base_currency}'
-    
     response = requests.get(url)
     data = response.json()
     
@@ -16,10 +16,12 @@ def get_exchange_rate(api_key, base_currency, target_currencies):
         print('Error:', data.get('error', 'Unknown error'))
         return None
 
+# Function to convert currency based on exchange rate
 def convert_currency(amount, exchange_rate):
-    
+
     return amount * exchange_rate
 
+# Main function to run the currency converter program
 def main():
     
     while True:
